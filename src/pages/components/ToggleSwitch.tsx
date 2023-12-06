@@ -1,14 +1,14 @@
 import { useState } from "react";
 
-interface SwitchProps {
+interface ToggleSwitchProps {
   onLabel?: string;
   offLabel?: string;
   defState?: boolean;
 };
 
-export default function Switch({ onLabel = "Yes", offLabel = "No", defState = false }: SwitchProps) {
+export default function ToggleSwitch({ onLabel = "Yes", offLabel = "No", defState = false }: ToggleSwitchProps) {
   const [toggle, setToggle] = useState(!defState);
-  const toggleClassBg = " transform bg-green-500";
+  const toggleClassBg = " transform bg-green-400";
   const toggleClassFg = " transform translate-x-2 bg-white";
   return (
     <div

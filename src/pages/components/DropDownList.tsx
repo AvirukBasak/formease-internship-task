@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
-type SpinnerProps = {
+type DropDownListProps = {
   list: string[];
   defaultSelection?: string;
   onSelect: (selection: string) => void;
 };
 
-export default function Spinner({ list, defaultSelection = '', onSelect }: SpinnerProps) {
+export default function DropDownList({ list, defaultSelection = '', onSelect }: DropDownListProps) {
   const [selection, setSelection] = useState(defaultSelection);
   const [isOpen, setIsOpen] = useState(false);
 
