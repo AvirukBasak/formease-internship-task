@@ -19,13 +19,13 @@ export default function Home(): JSX.Element {
       <DatePicker onDateSet={(date) => console.log(date)} />
       <TimePicker onTimeSet={(time) => console.log(time)} />
       <TextField onTextSet={(text) => console.log(text)} />
-      <SectionCollapsable title="I am a Section" children={
+      <SectionCollapsable title="I am a Section">
         <div className="flex flex-col space-y-2">
           <TextField onTextSet={(text) => console.log(text)} />
           <TextField onTextSet={(text) => console.log(text)} />
           <TextField onTextSet={(text) => console.log(text)} />
         </div>
-      } />
+      </SectionCollapsable>
     </>
   )
 }
