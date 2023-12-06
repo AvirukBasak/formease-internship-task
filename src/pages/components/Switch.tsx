@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type SwitchProps = {
+interface SwitchProps {
   onLabel?: string;
   offLabel?: string;
   defState?: boolean;
