@@ -18,7 +18,10 @@ export default function DatePicker({ onDateSet }: DatePickerProps): JSX.Element 
           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100"
       type="date"
       value={date?.toISOString().split("T")[0] || ""}
-      onChange={(e) => setDate(new Date(e.target.value))}
+      onChange={e => {
+        setDate(oldDate => new Date(e.target.value));
+        onDateSet && onDateSet(new Date(e.target.value));
+      }}
     />
   )
 }
