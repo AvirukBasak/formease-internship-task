@@ -18,7 +18,7 @@ export default function TextField({ onTextSet, placeholder }: TextFieldProps): J
           hover:bg-gray-50
           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100"
       type="text"
-      placeholder={placeholder || "Input"}
+      placeholder={placeholder || "Type here"}
       value={text}
       onChange={e => {
         setText(oldText => e.target.value);

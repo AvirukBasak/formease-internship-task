@@ -12,7 +12,7 @@ export default function DropDownList({ list, defaultSelection = '', onSelect }: 
 
   useEffect(() => {
     if (selection === '') {
-      setSelection('None');
+      setSelection('Input');
     }
   }, [selection]);
 
