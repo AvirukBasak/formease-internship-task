@@ -4,9 +4,10 @@ interface ToggleSwitchProps {
   onLabel?: string;
   offLabel?: string;
   defState?: boolean;
+  onStateChange?: (state: boolean) => void;
 };
 
-export default function ToggleSwitch({ onLabel = "Yes", offLabel = "No", defState = false }: ToggleSwitchProps): JSX.Element {
+export default function ToggleSwitch({ onLabel = "Yes", offLabel = "No", defState = false, onStateChange }: ToggleSwitchProps): JSX.Element {
   const [toggle, setToggle] = useState(!defState);
   const toggleClassBg = " transform bg-green-400";
   const toggleClassFg = " transform translate-x-2 bg-white";
@@ -18,9 +19,10 @@ export default function ToggleSwitch({ onLabel = "Yes", offLabel = "No", defStat
       }
       onClick={() => {
         setToggle(!toggle);
+        onStateChange && onStateChange(!toggle);
       }}>
 
-      {!toggle ? <span className="text-sm ml-1">{onLabel}</span> : ""}
+      {!toggle && <span className="text-sm ml-1">{onLabel}</span>}
 
       <div
         className={
@@ -29,7 +31,7 @@ export default function ToggleSwitch({ onLabel = "Yes", offLabel = "No", defStat
         }
       />
 
-      {toggle ? <span className="text-sm ml-1">{offLabel}</span> : ""}
+      {toggle && <span className="text-sm ml-1">{offLabel}</span>}
 
     </div>
   );
