@@ -6,7 +6,7 @@ interface ToggleSwitchProps {
   defState?: boolean;
 };
 
-export default function ToggleSwitch({ onLabel = "Yes", offLabel = "No", defState = false }: ToggleSwitchProps) {
+export default function ToggleSwitch({ onLabel = "Yes", offLabel = "No", defState = false }: ToggleSwitchProps): JSX.Element {
   const [toggle, setToggle] = useState(!defState);
   const toggleClassBg = " transform bg-green-400";
   const toggleClassFg = " transform translate-x-2 bg-white";

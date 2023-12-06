@@ -6,7 +6,7 @@ type DropDownListProps = {
   onSelect: (selection: string) => void;
 };
 
-export default function DropDownList({ list, defaultSelection = '', onSelect }: DropDownListProps) {
+export default function DropDownList({ list, defaultSelection = '', onSelect }: DropDownListProps): JSX.Element {
   const [selection, setSelection] = useState(defaultSelection);
   const [isOpen, setIsOpen] = useState(false);
 
