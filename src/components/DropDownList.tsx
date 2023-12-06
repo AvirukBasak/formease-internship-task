@@ -38,7 +38,7 @@ export default function DropDownList({ list, defaultSelection = '', onSelect }: 
             onClick={() => setIsOpen(!isOpen)}
           >
             {selection}
-            <img className="w-6" src="/downarrow.svg" alt="v"/>
+            <i className="ml-2 mt-1 fas fa-chevron-down"></i>
           </button>
         </span>
       </div>

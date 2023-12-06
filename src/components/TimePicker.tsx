@@ -9,13 +9,14 @@ export default function TimePicker({ onTimeSet }: TimePickerProps): JSX.Element 
   return (
     <input
       className="
-          md:w-56
-          rounded-md border border-gray-300
-          px-3 pt-3 pb-4
-          bg-white
-          text-sm text-gray-700
-          hover:bg-gray-50
-          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100"
+        inline-flex justify-between
+        md:w-56
+        rounded-md border border-gray-300
+        px-3 py-3
+        bg-white
+        text-gray-700
+        hover:bg-gray-50
+        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100"
       type="time"
       value={time}
       onChange={e => {

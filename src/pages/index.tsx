@@ -6,6 +6,7 @@ import DropDownList from '@/components/DropDownList'
 import DatePicker from '@/components/DatePicker'
 import TimePicker from '@/components/TimePicker'
 import TextField from '@/components/TextField'
+import SectionCollapsable from '@/components/SectionCollapsable'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,6 +19,13 @@ export default function Home(): JSX.Element {
       <DatePicker onDateSet={(date) => console.log(date)} />
       <TimePicker onTimeSet={(time) => console.log(time)} />
       <TextField onTextSet={(text) => console.log(text)} />
+      <SectionCollapsable title="I am a Section" children={
+        <div className="flex flex-col space-y-2">
+          <TextField onTextSet={(text) => console.log(text)} />
+          <TextField onTextSet={(text) => console.log(text)} />
+          <TextField onTextSet={(text) => console.log(text)} />
+        </div>
+      } />
     </>
   )
 }
