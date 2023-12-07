@@ -18,9 +18,13 @@ function BasicInformation(): JSX.Element {
             } onSelect={() => null} />
           </LabelWrapper>
 
+          <span>&nbsp;</span>
+
           <LabelWrapper label="Booking Contact Name" width="w-72">
             <TextField type="text" />
           </LabelWrapper>
+
+          <span>&nbsp;</span>
 
           <LabelWrapper label="Phone Number (No spaces)" width="w-72">
             <TextField type="tel" />
@@ -33,9 +37,13 @@ function BasicInformation(): JSX.Element {
             <TextField type="text" />
           </LabelWrapper>
 
+          <span>&nbsp;</span>
+
           <LabelWrapper label="ZIP/Postal Code" width="w-72">
             <TextField type="pin" placeholder="Input" />
           </LabelWrapper>
+
+          <span>&nbsp;</span>
 
           <LabelWrapper label="Country/City" width="w-72">
             <DropDownList defaultSelection="Canada" list={
@@ -59,6 +67,8 @@ function RoleInformation(): JSX.Element {
             <TextField type="text" placeholder="Input" />
           </LabelWrapper>
 
+          <span>&nbsp;</span>
+
           <LabelWrapper label="Name of represented client" width="w-72">
             <TextField type="text" placeholder=" " />
           </LabelWrapper>
@@ -69,6 +79,8 @@ function RoleInformation(): JSX.Element {
           <LabelWrapper label="Lead Counsel(s) Information" width="w-72">
             <TextField type="text" placeholder="Name" />
           </LabelWrapper>
+
+          <span className="mt-8" ><img src="/elipsis.svg" /></span>
 
           <LabelWrapper width="w-72">
             <TextField type="email" placeholder="Email" />
@@ -109,7 +121,7 @@ function OpposingPartyInformation(): JSX.Element {
   return (
     <>
       <SectionCollapsable title="Opposing Party Information" /*subtitle=""*/>
-          <div className="md:w-full ml-8 mt-4"><AccountInformation /></div>
+        <div className="md:w-full ml-8 mt-4"><AccountInformation /></div>
       </SectionCollapsable>
     </>
   )
