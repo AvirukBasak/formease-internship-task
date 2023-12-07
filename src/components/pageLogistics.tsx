@@ -7,7 +7,7 @@ export default function PageLogistics(): JSX.Element {
     <>
       <SectionCollapsable title="Booking Party Information" /*subtitle=""*/>
         <>
-          <div className="ml-8 flex items-center">
+          <div className="ml-12 flex items-center">
             <label className="mr-3 text-sm font-medium text-gray-700">Use Information on account?</label>
             <ToggleSwitch defState={true} onStateChange={state => {
               console.log(state);
