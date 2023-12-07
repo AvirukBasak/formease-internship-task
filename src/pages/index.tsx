@@ -19,9 +19,9 @@ export default function Home(): JSX.Element {
         ]}
         pages={[
           null,
-          <div className="md:w-full p-10"><PagePartyInfo /></div>,
-          <div className="md:w-full p-10"><PageLogistics /></div>,
-          <div className="md:w-full p-10"><PageAdditonalSrv /></div>,
+          <div className="md:w-full p-20"><PagePartyInfo /></div>,
+          <div className="md:w-full p-20"><PageLogistics /></div>,
+          <div className="md:w-full p-20"><PageAdditonalSrv /></div>,
         ]}
         defaultPage={1}
       />
