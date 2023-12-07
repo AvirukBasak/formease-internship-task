@@ -4,9 +4,10 @@ interface TextFieldProps {
   placeholder?: string
   onTextSet?: (text: string) => void
   type?: string
+  disabled?: boolean
 }
 
-export default function TextField({ onTextSet, placeholder, type = "text" }: TextFieldProps): JSX.Element {
+export default function TextField({ onTextSet, placeholder, type = "text", disabled }: TextFieldProps): JSX.Element {
   const [text, setText] = useState<string>("");
   return (
     <input
@@ -20,6 +21,7 @@ export default function TextField({ onTextSet, placeholder, type = "text" }: Tex
         hover:bg-gray-50
         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100"
       type={type}
+      disabled={disabled}
       placeholder={placeholder || "Type here"}
       value={text}
       onChange={e => {
