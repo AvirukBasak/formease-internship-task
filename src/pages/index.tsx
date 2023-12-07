@@ -7,18 +7,19 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home(): JSX.Element {
   return (
-    <div className="p-20">
+    <div className="p-10">
       <Navigator
         labels={[
-          "Initial INformation",
+          "Initial Information",
           "Party Information",
           "Logistics",
           "Additional Services",
         ]}
         pages={[
           <></>,
-          <PagePartyInfo />
-        ]} />
+          <div className="p-10 md:w-full"><PagePartyInfo /></div>
+        ]}
+      />
     </div>
   )
 }
