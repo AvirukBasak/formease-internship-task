@@ -16,8 +16,8 @@ export default function Home(): JSX.Element {
           "Additional Services",
         ]}
         pages={[
-          <></>,
-          <div className="p-10 md:w-full"><PagePartyInfo /></div>
+          null,
+          <div className="md:w-full p-10"><PagePartyInfo /></div>
         ]}
       />
     </div>
