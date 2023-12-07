@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 
 type DropDownListProps = {
   list: string[];
@@ -6,13 +6,13 @@ type DropDownListProps = {
   onSelect: (selection: string) => void;
 };
 
-export default function DropDownList({ list, defaultSelection = '', onSelect }: DropDownListProps): JSX.Element {
+export default function DropDownList({ list, defaultSelection = "", onSelect }: DropDownListProps): JSX.Element {
   const [selection, setSelection] = useState(defaultSelection);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (selection === '') {
-      setSelection('Input');
+    if (selection === "") {
+      setSelection("Input");
     }
   }, [selection]);
 
