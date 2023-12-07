@@ -61,7 +61,6 @@ function BasicInformation(): JSX.Element {
 
 function RoleInformation(): JSX.Element {
 
-  const [additionalCouncelInfoCount, setAdditionalCouncelInfoCount] = useState(0);
   const [listOfCounsel, setListOfCounsel] = useState([] as JSX.Element[]);
 
   const CounselInfo = function (): JSX.Element {
@@ -91,8 +90,7 @@ function RoleInformation(): JSX.Element {
 
           <LabelWrapper showLabel={false} width="w-72">
             <span className="flex">
-              <img src="/plus.svg" className="absolute mt-3 cursor-pointer inline" style={{ left: "18%" }} onClick={() => {
-                setAdditionalCouncelInfoCount(oldCount => oldCount + 1);
+              <img src="/plus.svg" className="absolute mt-3 cursor-pointer inline" style={{ left: "16%" }} onClick={() => {
                 setListOfCounsel(oldList => [...oldList, <CounselInfo />]);
               }} />
               <TextField type="text" placeholder="Add additional counsel" disabled={true} />
@@ -138,7 +136,7 @@ function RoleInformation(): JSX.Element {
           </LabelWrapper>
         </div>
 
-        {additionalCouncelInfoCount > 0 && listOfCounsel}
+        {listOfCounsel.length > 0 && listOfCounsel}
 
         <PlaceHolderForAdditionalCounsel />
 
@@ -173,14 +171,38 @@ function BookingPartyInformation(): JSX.Element {
   )
 }
 
+function AdditionalOpposingParties({ isVisible = true }: { isVisible?: boolean }): JSX.Element {
+
+  const [visible, setVisible] = useState(isVisible);
+
+  return (
+    <>
+      <img
+        src="/additionalParties.svg"
+        className="h-10 mt-12 mb-8 ml-8 cursor-pointer inline z-10"
+        style={{ display: visible ? "inline" : "none" }}
+        onClick={() => setVisible(false)} />
+      {visible && <AccountInformation />}
+    </>
+  )
+}
+
 function OpposingPartyInformation(): JSX.Element {
+
+  const [listOfOpposingParties, setListOfOpposingParties] = useState([] as JSX.Element[]);
+
   return (
     <>
       <SectionCollapsable title="Opposing Party Information" /*subtitle=""*/>
-        <div className="md:w-full ml-8 mt-4"><AccountInformation /></div>
+        <>
+          <div className="md:w-full ml-8 mt-4"><AccountInformation /></div>
+          {listOfOpposingParties.length > 0 && listOfOpposingParties}
+        </>
       </SectionCollapsable>
       <div className="ml-8 mt-12">
-        <Button label="+ Additional Parties" onClick={() => null} />
+        <Button label="+ Additional Parties" onClick={() => {
+          setListOfOpposingParties(oldList => [...oldList, <AdditionalOpposingParties />]);
+        }} />
       </div>
     </>
   )
