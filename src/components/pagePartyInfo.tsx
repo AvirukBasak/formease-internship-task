@@ -4,6 +4,7 @@ import SectionCollapsable from '@/components/SectionCollapsable'
 import DropDownList from '@/components/DropDownList';
 import LabelWrapper from '@/components/LabelWrapper';
 import TextField from '@/components/TextField';
+import Button from '@/components/Button';
 
 function BasicInformation(): JSX.Element {
   return (
@@ -59,6 +60,55 @@ function BasicInformation(): JSX.Element {
 }
 
 function RoleInformation(): JSX.Element {
+
+  const [additionalCouncelInfoCount, setAdditionalCouncelInfoCount] = useState(0);
+  const [listOfCounsel, setListOfCounsel] = useState([] as JSX.Element[]);
+
+  const CounselInfo = function (): JSX.Element {
+    return (
+      <>
+        <div className="mt-2 w-full" />
+        <div className="flex flex-row justify-evenly">
+          <LabelWrapper showLabel={false} width="w-72">
+            <TextField type="text" placeholder="Name" />
+          </LabelWrapper>
+
+          <span className="mt-3" ><img src="/elipsis.svg" /></span>
+
+          <LabelWrapper showLabel={false} width="w-72">
+            <TextField type="email" placeholder="Email" />
+          </LabelWrapper>
+        </div>
+      </>
+    )
+  }
+
+  const PlaceHolderForAdditionalCounsel = function (): JSX.Element {
+    return (
+      <>
+        <div className="mt-2 w-full" />
+        <div className="flex flex-row justify-evenly">
+
+          <LabelWrapper showLabel={false} width="w-72">
+            <span className="flex">
+              <img src="/plus.svg" className="absolute mt-3 cursor-pointer inline" style={{ left: "18%" }} onClick={() => {
+                setAdditionalCouncelInfoCount(oldCount => oldCount + 1);
+                setListOfCounsel(oldList => [...oldList, <CounselInfo />]);
+              }} />
+              <TextField type="text" placeholder="Add additional counsel" disabled={true} />
+            </span>
+          </LabelWrapper>
+
+          <span className="mt-3" ><img src="/elipsis.svg" /></span>
+
+          <LabelWrapper showLabel={false} width="w-72">
+            <TextField type="text" placeholder=" " disabled={true} />
+          </LabelWrapper>
+        </div>
+      </>
+    )
+  }
+
   return (
     <>
       <div className="mt-4 w-full">
@@ -67,7 +117,7 @@ function RoleInformation(): JSX.Element {
             <TextField type="text" placeholder="Input" />
           </LabelWrapper>
 
-          <span>&nbsp;</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
           <LabelWrapper label="Name of represented client" width="w-72">
             <TextField type="text" placeholder=" " />
@@ -75,6 +125,7 @@ function RoleInformation(): JSX.Element {
         </div>
       </div>
       <div className="mt-5 w-full">
+
         <div className="flex flex-row justify-evenly">
           <LabelWrapper label="Lead Counsel(s) Information" width="w-72">
             <TextField type="text" placeholder="Name" />
@@ -86,6 +137,11 @@ function RoleInformation(): JSX.Element {
             <TextField type="email" placeholder="Email" />
           </LabelWrapper>
         </div>
+
+        {additionalCouncelInfoCount > 0 && listOfCounsel}
+
+        <PlaceHolderForAdditionalCounsel />
+
       </div>
     </>
   )
@@ -123,6 +179,9 @@ function OpposingPartyInformation(): JSX.Element {
       <SectionCollapsable title="Opposing Party Information" /*subtitle=""*/>
         <div className="md:w-full ml-8 mt-4"><AccountInformation /></div>
       </SectionCollapsable>
+      <div className="ml-8 mt-12">
+        <Button label="+ Additional Parties" onClick={() => null} />
+      </div>
     </>
   )
 }
