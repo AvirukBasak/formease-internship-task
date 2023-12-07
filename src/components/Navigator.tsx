@@ -9,8 +9,8 @@ interface NavigatorProps {
 export default function Navigator({ labels, pages, defaultPage = 0 }: NavigatorProps): JSX.Element {
   const [currentPage, setCurrentPage] = useState(defaultPage);
   return (
-    <div className="md:w-full flex flex-col items-center">
-      <div className="md:w-full flex flex-row justify-evenly">
+    <div className="w-full flex flex-col items-center">
+      <div className="w-full flex flex-row justify-evenly">
         <div className="h-0.5 bg-gray-800 absolute -z-10" style={{ width: "57%", top: "4.5rem" }} />
         {labels.map((label, index) => {
           return (

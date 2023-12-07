@@ -24,7 +24,7 @@ export default function SectionCollapsable({ title, children, defaultCollapsed =
         </button>
         <h2 className="ml-2 text-lg font-medium text-gray-900">{title}</h2>
       </div>
-      <div className={`${collapsed ? "hidden" : "block"} mt-4`}>
+      <div className={`w-full ${collapsed ? "hidden" : "block"} mt-4`}>
         {children}
       </div>
     </>

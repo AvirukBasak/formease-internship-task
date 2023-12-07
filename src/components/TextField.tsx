@@ -3,22 +3,23 @@ import React, { useState } from "react"
 interface TextFieldProps {
   placeholder?: string
   onTextSet?: (text: string) => void
+  type?: string
 }
 
-export default function TextField({ onTextSet, placeholder }: TextFieldProps): JSX.Element {
+export default function TextField({ onTextSet, placeholder, type = "text" }: TextFieldProps): JSX.Element {
   const [text, setText] = useState<string>("");
   return (
     <input
       className="
         inline-flex justify-between
-        md:w-56
+        w-full
         rounded-md border border-gray-300
         px-3 py-3
         bg-white
-        text-gray-700
+        text-sm text-gray-700
         hover:bg-gray-50
         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100"
-      type="text"
+      type={type}
       placeholder={placeholder || "Type here"}
       value={text}
       onChange={e => {

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Inter } from 'next/font/google'
-import PagePartyInfo from '@/pages/pagePartyinfo'
-import PageLogistics from '@/pages/pageLogistics'
-import PageAdditonalSrv from '@/pages/pageAdditionalSrv'
+import PagePartyInfo from '@/components/pagePartyInfo'
+import PageLogistics from '@/components/pageLogistics'
+import PageAdditonalSrv from '@/components/pageAdditionalSrv'
 import Navigator from '@/components/Navigator'
 
 const inter = Inter({ subsets: ['latin'] })
