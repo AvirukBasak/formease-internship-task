@@ -47,6 +47,7 @@ export default function DropDownList({ list, defaultSelection = "", onSelect }: 
           className="
             origin-top-right
             absolute right-0
+            z-10
             mt-1 w-full
             rounded-md
             shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100"
