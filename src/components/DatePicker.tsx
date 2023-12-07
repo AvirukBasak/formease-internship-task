@@ -10,7 +10,7 @@ export default function DatePicker({ onDateSet }: DatePickerProps): JSX.Element 
     <input
       className="
         inline-flex justify-between
-        md:w-56
+        w-full
         rounded-md border border-gray-300
         px-3 py-3
         bg-white

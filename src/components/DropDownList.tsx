@@ -17,15 +17,14 @@ export default function DropDownList({ list, defaultSelection = "", onSelect }: 
   }, [selection]);
 
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left w-full">
       <div>
-        <span className="rounded-md shadow-sm">
+        <span className="rounded-md shadow-sm w-full">
           <button
             type="button"
             className="
               inline-flex justify-between
               w-full
-              md:w-56
               rounded-md border border-gray-300
               px-2 pl-3 py-3
               bg-white
@@ -48,7 +47,7 @@ export default function DropDownList({ list, defaultSelection = "", onSelect }: 
           className="
             origin-top-right
             absolute right-0
-            mt-1 md:w-56
+            mt-1 w-full
             rounded-md
             shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100"
           role="menu"

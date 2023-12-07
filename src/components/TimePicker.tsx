@@ -10,11 +10,11 @@ export default function TimePicker({ onTimeSet }: TimePickerProps): JSX.Element 
     <input
       className="
         inline-flex justify-between
-        md:w-56
+        w-full
         rounded-md border border-gray-300
         px-3 py-3
         bg-white
-        text-gray-700
+        text-sm text-gray-700
         hover:bg-gray-50
         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100"
       type="time"
