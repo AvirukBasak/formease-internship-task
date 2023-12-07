@@ -3,10 +3,11 @@ import React, { useState } from "react"
 interface NavigatorProps {
   labels: string[]
   pages: (JSX.Element | null)[]
+  defaultPage?: number
 }
 
-export default function Navigator({ labels, pages }: NavigatorProps): JSX.Element {
-  const [currentPage, setCurrentPage] = useState(0);
+export default function Navigator({ labels, pages, defaultPage = 0 }: NavigatorProps): JSX.Element {
+  const [currentPage, setCurrentPage] = useState(defaultPage);
   return (
     <div className="md:w-full flex flex-col items-center">
       <div className="md:w-full flex flex-row justify-evenly">
